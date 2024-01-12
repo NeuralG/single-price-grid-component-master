@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+	font-family: "Karla", sans-serif;
+	--regular: 400;
+	--bold: 700;
+
+	--cyan: hsl(179, 62%, 43%);
+	--bright-yellow: hsl(71, 73%, 54%);
+
+	--light-gray: hsl(204, 43%, 93%);
+	--grayish-blue: hsl(218, 22%, 67%);
+}
+
+.attribution {
+	position: absolute;
+	top: 2.5%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: hsl(206, 47%, 93%);
+}
+
+main {
+	margin-top: 5em;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		"card1"
+		"card2"
+		"card3";
+	max-width: 500px;
+	width: 87.5%;
+	box-shadow: 0px 0px 20px rgb(228, 223, 223);
+}
+
+.card1 {
+	padding: 2.5em;
+}
+
+.card2,
+.card3 {
+	padding: 1.5em 2.5em 2.25em;
+}
+
+.card1 {
+	grid-area: card1;
+	background-color: hsl(0, 0%, 100%);
+}
+
+.card2 {
+	grid-area: card2;
+	background-color: hsl(179, 61%, 44%);
+}
+
+.card3 {
+	grid-area: card3;
+	background-color: hsl(179, 47%, 52%);
+}
+
+/* CARD1 */
+h1 {
+	font-size: 1.48rem;
+	color: var(--cyan);
+}
+
+.card1 h2 {
+	font-size: 1.1rem;
+	color: var(--bright-yellow);
+	margin-top: 1.25em;
+}
+
+.card1 p {
+	font-size: 1rem;
+	color: var(--grayish-blue);
+	margin-top: 0.8em;
+	line-height: 1.5;
+}
+
+/* CARD2 */
+
+.card2 h2 {
+	margin-top: 1em;
+	font-size: 1.1rem;
+	margin-bottom: 1em;
+	color: var(--light-gray);
+}
+
+.card2 h3 {
+	display: flex;
+}
+
+.card2 h3 span:nth-of-type(1) {
+	font-size: 1.65em;
+	color: var(--light-gray);
+}
+
+.card2 h3 span:nth-of-type(2) {
+	font-size: 0.9em;
+	align-self: center;
+	color: var(--grayish-blue);
+	margin-left: 10px;
+}
+
+.card2 p {
+	margin-top: 5px;
+	color: var(--light-gray);
+}
+
+.card2 button {
+	border: 0;
+	color: var(--light-gray);
+	background-color: var(--bright-yellow);
+	display: block;
+	margin-top: 2em;
+	width: 100%;
+	height: 3em;
+	border-radius: 5px;
+	font-size: 1em;
+	font-weight: var(--bold);
+	box-shadow: 0px 0px 5px rgb(121, 116, 116);
+}
+
+.card2 button:hover,
+.card2 button:active {
+	border: 0;
+	cursor: pointer;
+	background-color: hsl(71, 65%, 48%);
+}
+
+/* CARD3 */
+.card3 h2 {
+	margin-top: 0.5em;
+	font-size: 1.13em;
+	color: var(--light-gray);
+	margin-bottom: 1.5rem;
+}
+
+.card3 ul {
+	list-style-type: none;
+}
+
+.card3 li {
+	font-size: 0.9rem;
+	color: var(--light-gray);
+	margin-bottom: 3.75px;
+}
+
+@media (width>700px) {
+	main {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"card1 card1"
+			"card2 card3";
+		max-width: 635px;
+		margin-top: 0em;
+	}
+	.card1 {
+		border-radius: 7px 7px 0 0;
+	}
+	.card2 {
+		border-bottom-left-radius: 7px;
+	}
+	.card3 {
+		border-bottom-right-radius: 7px;
+	}
+}
+
+@media (width<700px) {
+	.card1 {
+		border-radius: 7px 7px 0 0;
+	}
+	.card3 {
+		border-radius: 0 0 7px 7px;
+	}
+}
